@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 /**
-* main - prints the standard error sandwiched around the standard output
+* main - prints the standard error sandwiched around the standard outpu/t
 *
 * Return: returns 1
 */

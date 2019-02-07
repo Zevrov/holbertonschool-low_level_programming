@@ -1,44 +1,46 @@
 # README for C - Hello, World
 
-## 0-positive_or_negative.c
+## 0-preprocessor
 ```
+runs a C file who's name is saved n the variable $CFILE through the preprocessor 
+and saves the result to the file c.
 ```
-## 1-last_digit.c
+## 1-compiler
 ```
+compiles a C file but does not link. C file name is stored in the variable $CFILE.
+the output of the file should be named the same as the C file but with the extension .o instead of .c.
 ```
-## 2-print_alphabet.c
+## 2-assembler
 ```
+generates the assembly code of a C code and saves it in an output file.
+the C file name is taken from the variable $CFILE.
+the output file will be named in the same as the C file, but with the extension .s instead of .c.
 ```
-## 3-print_alphabets.c
+## 3-name
 ```
+compiles a C file and creates an executable named cisfun.
+the C file name is saved in the variable $CFILE.
 ```
-## 4-print_alphabt.c
+## 4-puts.c
 ```
+prints exactly "Programming is like building a multilingual puzzle, followed by a new line.
 ```
-## 5-print_numbers.c
+## 5-printf.c
 ```
+prints exactly "with proper grammar, but the outcome is a piece of art," 
+followed by a new line.
 ```
-## 6-print_numberz.c
+## 6-size.c
 ```
+prints the size of various types on the computer it is compiled and run on.
 ```
-## 7-print_tebahpla.c
+## 100-intel
 ```
+generates the assembly code (Intel syntax) of a C code and saves it in an output file.
+the C file name will be saved in the variable $CFILE.
+the output file should be named the same as the C file, but with the extension .s instead of .c.
 ```
-## 8-print_base16.c
+## 101-quote.c
 ```
-```
-## 9-print_comb.c
-```
-```
-## 10-print_comb2.c
-```
-```
-## 100-print_comb3.c
-```
-```
-## 101-print_comb4.c
-```
-```
-## 102-print_comb5.c
-```
+Write a C program that prints exactly and that piece of art is useful" - Dora Korpar, 2015-10-19, followed by a new line, to the standard error.
 ```

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 /**
-* main - prints the last digit of n and if it is grater than 5, less than 5 or =0
+* main - prints the last digit of n and some info about it
 *
 * Return: returns 0
 */

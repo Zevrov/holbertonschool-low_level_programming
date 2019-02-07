@@ -3,7 +3,7 @@
 #include <time.h>
 /**
 * main - prints if n is positive or negative or 0
-* return: returns 0
+* Return: returns 0
 */
 int main(void)
 {

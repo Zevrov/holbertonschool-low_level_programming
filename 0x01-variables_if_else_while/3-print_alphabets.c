@@ -1,15 +1,20 @@
 #include <stdio.h>
 /**
-* main - prints the lowercase english alphabet but not e or q
+* main - prints the english alphabet in upper and lowercase
 * Return: returns 0
 */
 int main(void)
 {
 	char Z;
+	char z;
 
-	for (Z != 'e' Z != 'q'; Z = 'a'; Z <= 'z'; Z++)
+	for (Z = 'a'; Z <= 'z'; Z++)
 	{
 	putchar (Z);
+	}
+	for (z = 'A'; z <= 'Z'; z++)
+	{
+	putchar (z);
 	}
 	putchar ('\n');
 

@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 /**
-* main - prints the last digit of n and if it is grater than 5,
-* less than 5 or =0
+* main - prints the last digit of n and if it is grater than 5, less than 5 or =0
+*
 * Return: returns 0
 */
 
@@ -14,15 +14,15 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	last = n % 10;
-	if (n > 5)
+	if (last > 5)
 	{
 	printf("Last digit of %d is %d and greater than 5\n", n, last);
 	}
-	if (n == 0)
+	if (last == 0)
 	{
 	printf("Last digit of %d is %d and is 0\n", n, last);
 	}
-	if (n < 6, n != 0)
+	if (last < 6, last != 0)
 	{
 	printf("Last digit of %d is %d and is less than 6 and not 0\n", n, last);
 	}

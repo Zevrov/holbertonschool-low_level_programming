@@ -3,10 +3,8 @@
 #include <time.h>
 /**
 * main - prints the last digit of n and some info about it
-*
 * Return: returns 0
 */
-
 int main(void)
 {
 	int n, last;

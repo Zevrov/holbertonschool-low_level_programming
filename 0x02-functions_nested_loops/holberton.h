@@ -9,3 +9,13 @@ void print_alphabet(void)
 	}
 	putchar('\n');
 }
+void print_alphabet_x10()
+{
+	int x = 9;
+	int i;
+
+	for (i = 0; i <= x; i++)
+	{
+		print_alphabet();
+	}
+}

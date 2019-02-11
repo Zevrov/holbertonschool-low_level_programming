@@ -1,10 +1,15 @@
 #include "holberton.h"
 /**
-* main - print the lowercase alphabet backwards.
+* print_alphabet - print the lowercase alphabet backwards.
 * Return: Always 0.
 */
-int main(void)
+int print_alphabet(void)
 {
-	print_alphabet();
-	return (0);
+	int Z;
+
+	for (Z = 'a'; Z <= 'z'; Z++)
+	{
+		_putchar(Z);
+	}
+	_putchar('\n');
 }

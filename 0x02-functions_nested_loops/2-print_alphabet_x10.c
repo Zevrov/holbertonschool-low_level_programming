@@ -5,9 +5,14 @@
 void print_alphabet_x10(void)
 {
 	int i;
+	int Z;
 
 	for( i = 0; i <=9; i++)
 	{
-		print_alphabet();
+		for (Z = 'a'; Z <= 'z'; Z++)
+		{
+			_putchar(Z);
+		}
+		_putchar('\n');
 	}
 }

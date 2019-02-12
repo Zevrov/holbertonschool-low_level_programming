@@ -11,7 +11,7 @@ void times_table(void)
 	{
 		for (Y = 0; Y <= 9; Y++)
 		{
-			if (X == 0 && Y == 0)
+			if (Y == 0)
 			{
 				_putchar('0');
 			}

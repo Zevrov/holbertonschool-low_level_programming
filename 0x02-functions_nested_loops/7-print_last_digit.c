@@ -6,7 +6,10 @@
 */
 int print_last_digit(int n)
 {
-	n = ((n < 0) ? (-n) : (n));
+	if (n < 0)
+	{
+		n = ((n < 0) ? (-n) : (n));
+	}
 	if (n > 9)
 	{
 		n = n % 10;

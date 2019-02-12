@@ -11,7 +11,7 @@ void times_table(void)
 	{
 		for (Y = 0; Y <= 9; Y++)
 		{
-			if (Y == 0)
+			if (Y  == 0)
 			{
 				_putchar('0');
 			}
@@ -22,7 +22,7 @@ void times_table(void)
 				_putchar('0' + (((X * Y) % 100) / 10));
 				_putchar('0' + ((X * Y) % 10));
 			}
-			if ((X * Y) <= 9 && (X * Y) > 0)
+			if ((X * Y) <= 9 && (Y > 0))
 			{
 				_putchar(',');
 				_putchar(' ');

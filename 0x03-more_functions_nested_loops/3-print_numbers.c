@@ -2,7 +2,6 @@
 /**
  * print_numbers - prints digits 0-9
  */
-int _putchar(char c);
 void print_numbers(void)
 {
 	int Z;

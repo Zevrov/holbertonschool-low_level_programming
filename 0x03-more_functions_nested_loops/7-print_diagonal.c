@@ -10,7 +10,7 @@ void print_diagonal(int n)
 
 	if (n > 0)
 	{
-		for (Z = 0; n >= Z; Z++)
+		for (Z = 0; n > Z; Z++)
 		{
 			for (Y = 0; Y < Z; Y++)
 			{

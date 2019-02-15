@@ -5,14 +5,31 @@
  */
 void print_number(int n)
 {
+	int R;
+	char Z, L;
+
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		L = ('0' - (n % 10));
+		n /= -10;
 	}
-	if (n / 10)
+	else
 	{
-		print_number(n / 10);
+		L = ('0' + (n % 10));
+		n /= 10;
 	}
-	_putchar((n % 10) + '0');
+	R = 0;
+	while (n > 0)
+	{
+		R = R * 10 + (n % 10);
+		n /= 10;
+	}
+	while (R > 0)
+	{
+		Z = ((R % 10) + '0');
+		_putchar(Z);
+		R /= 10;
+	}
+	_putchar(L);
 }

@@ -5,17 +5,27 @@
 */
 void rev_string(char *s)
 {
-	int Temp, x, y;
+	int len, z;
+	char *B, *E, temp;
 
-	y = x - 1;
-	x = 0;
-
-	while (x < y)
+	while (*s != '\0')
 	{
-		Temp = *s[x];
-		*s[x] = *s[y];
-		*s[y] = Temp;
-		x++;
-		y++;
+		s++;
+		len++;
+	}
+
+	B = s;
+	E = s;
+
+	for (z = 0; z < len -1; z++)
+		E++;
+	for (z = 0; z < len / 2; z++)
+	{
+		temp = *E;
+		*E = *B;
+		*B = temp;
+
+		B++;
+		E++;
 	}
 }

@@ -1,4 +1,4 @@
-#inclue "holberton.h"
+#include "holberton.h"
 /**
 * rev_string - reverses a string
 * @s: the string being reversed
@@ -18,10 +18,4 @@ void rev_string(char *s)
 		x++;
 		y++;
 	}
-	while (*s != '\0')
-	{
-		_putchar(*s);
-		str++;
-	}
-	_putchar('\n');
 }

@@ -4,7 +4,7 @@
 * @str: the string being printed
 */
 void print_rev(char *s)
-{	
+{
 	while (*s != '\0')
 	{
 		s++;

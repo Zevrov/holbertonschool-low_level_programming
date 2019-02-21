@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-* *_strcat - concatenates 2 strings
+* *_strncat - concatenates 2 strings
 * @dest: the target string
 * @src: what is being added
 * @n: how much of src is being added to dest
@@ -12,7 +12,7 @@ char *_strncat(char *dest, char *src, int n)
 
 	for (x = 0; dest[x] != '\0'; x++)
 		;
-	for (y = 0; src[y] != '\0' && != n; y++)
+	for (y = 0; src[y] != '\0' && y < n; y++)
 	{
 		dest[x + y] = src[y];
 	}

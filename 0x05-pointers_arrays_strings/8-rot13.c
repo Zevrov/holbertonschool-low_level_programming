@@ -1,9 +1,24 @@
 #include "holberton.h"
 /**
- * rot13 - encodes or decodes a string in ROT-13
- * @char *: the string
- * Return: the string after ROT-13
- */
-char *rot13(char *)
+ * rot13 - converts to rot13
+ * @z: the string
+ * Return: rot 13 string
+ **/
+char *rot13(char *z)
 {
-	for 
+	int x, y;
+	char a[] = "abcdefghijklm";
+	char A[] = "ABCDEFGHIJKLM";
+
+	for (x = 0; z[x] != '\0'; x++)
+	{
+		for (y = 0; a[y] != '\0'; y++)
+		{
+			if (z[x] == a[y] || z[x] == A[y])
+				z[x] = z[x] + 13;
+			else
+				z[x] = z[x] - 13;
+		}
+	}
+	return (z);
+}

@@ -6,7 +6,7 @@
  */
 char *cap_string(char *Z)
 {
-	char a[] = "\n\t .,;:-(){}[]/\'""?¿!¡";
+	char a[] = "\n\t .,;:-(){}[]/\'\"?¿!¡";
 	int x, y;
 
 	for (x = 0; Z[x] != '\0'; x++)
@@ -18,12 +18,12 @@ char *cap_string(char *Z)
 			if (Z[x] == a[y])
 			{
 				x++;
-				if(Z[x] >= 'a' && Z[x] <= 'z')
+				if (Z[x] >= 'a' && Z[x] <= 'z')
 					Z[x] = Z[x] - 32;
 				else
 				{
 					x++;
-					if(Z[x] >= 'a' && Z[x] <= 'z')
+					if (Z[x] >= 'a' && Z[x] <= 'z')
 						Z[x] = Z[x] - 32;
 				}
 			}

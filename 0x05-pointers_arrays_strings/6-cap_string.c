@@ -6,7 +6,7 @@
  */
 char *cap_string(char *Z)
 {
-	char a[] = "\n\t .,;:-(){}[]/\'\"?¿!¡";
+	char a[] = "\n\t .,;:(){}/\'\"?!";
 	int x, y;
 
 	for (x = 0; Z[x] != '\0'; x++)

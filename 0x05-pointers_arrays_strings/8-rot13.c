@@ -7,16 +7,18 @@
 char *rot13(char *z)
 {
 	int x, y;
-	char a[] = "abcdefghijklmABCDEFGHIJKLM";
-	char b[] = "nopqrstuvwxyzNOPQRSTUVWXYZ";
+	char a[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char b[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
 	for (x = 0; z[x] != '\0'; x++)
 	{
-		z[x] = z[x] - 13;
 		for (y = 0; a[y] != '\0'; y++)
 		{
-			if (z[x] + 13 == a[y])
+			if (z[x] == a[y])
+			{
 				z[x] = b[y];
+				break;
+			}
 		}
 	}
 	return (z);

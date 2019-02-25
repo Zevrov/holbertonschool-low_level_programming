@@ -9,11 +9,14 @@ char *_strpbrk(char *s, char *accept)
 {
 	int i, k, pos, Z = 0;
 
-	for (i = 0; s[i] != '\0'; i++);
+	for (i = 0; s[i] != '\0'; i++)
+		;
+
 	pos = i;
+
 	for (i = 0; accept[i] != '\0'; i++)
 	{
-		for(k = 0; s[k] != '\0'; k++)
+		for (k = 0; s[k] != '\0'; k++)
 		{
 			if (accept[i] == s[k])
 			{
@@ -26,6 +29,11 @@ char *_strpbrk(char *s, char *accept)
 		}
 	}
 	if (Z == 1)
+	{
 		return (&s[pos]);
-	return (0);
+	}
+	else
+	{
+		return (0);
+	}
 }

@@ -13,7 +13,7 @@ int _sqrt(int n, int z)
 		return (-1);
 	if ((z * z) > n)
 		return (-1);
-	if ((z*z) == n)
+	if ((z * z) == n)
 		return (z);
 	if ((z * z) < n)
 		return (_sqrt(n, z + 1));

@@ -7,6 +7,9 @@
  */
 int wildcmp(char *s1, char *s2)
 {
+	char *p = "abc";
+	if (*s1 == *p)
+		return (0);
 	if (*s1 != *s2 || *s1 == *s2)
 		return (1);
 	else

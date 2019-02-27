@@ -10,17 +10,33 @@ int ispal(char *z, int s, int e)
 {
 	if (s == e)
 	{
+		return (1);
+	}
+	if (z[s] != z[e])
+	{
 		return (0);
 	}
-	if (z[s] == z[e])
+	if (s < e + 1)
 	{
 		return (ispal(z, s + 1, e - 1));
 	}
+	return (1);
+}
+/**
+ * _strlen_recursion - counts the length of a string
+ * @s: the string
+ * Return: The string length
+ **/
+int _strlen_recursion(char *s)
+{
+	if (*s == '\0')
+	{
+		return (0);
+	}
 	else
 	{
-		return (1);
+		return (1 + _strlen_recursion(s + 1));
 	}
-	return (0);
 }
 /**
  * is_palindrome - checks if the string is a palindrome
@@ -29,24 +45,11 @@ int ispal(char *z, int s, int e)
  */
 int is_palindrome(char *s)
 {
-	int n = 0;
-	char *p = s;
+	int n = _strlen_recursion(s);
 
-	while (*p != '\0')
-	{
-		s++;
-		n++;
-	}
 	if (n == 0)
 	{
 		return (1);
 	}
-	if (ispal(s, 0, n - 1))
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
+	return (ispal(s, 0, n - 1));
 }

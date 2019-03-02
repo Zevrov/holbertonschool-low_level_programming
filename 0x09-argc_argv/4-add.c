@@ -9,10 +9,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int i;
-	int sum;
-	int x;
-	
+	int i, x, z, sum, isnum = 1;
+
 	for (i = 1; i < argc; i++)
 	{
 		for (x = 0; argv[i][x] != '\0'; x++)
@@ -20,20 +18,20 @@ int main(int argc, char *argv[])
 			if (isalpha(argv[i][x]))
 			{
 				printf("Error\n");
-				return (1);
-			}
-			else
-			{
-				for (i = 1; i < argc; i++)
-				{
-					sum += atoi(argv[i]);
-				}
-				printf("%d\n", sum);
-				return (0);
+				isnum = 0;
 			}
 		}
 	}
-	if (argc == 1)
+	if (isnum != 0)
+	{
+		for (z = 1; z < argc; z++)
+		{
+			sum += atoi(argv[z]);
+		}
+		printf("%d\n", sum);
+		return (0);
+	}
+	if (i == 1)
 		printf("0\n");
 	return (0);
 }

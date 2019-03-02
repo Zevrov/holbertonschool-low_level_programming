@@ -4,7 +4,7 @@
  * main - multiplies 2 numbers
  * @argc: number of args
  * @argv: array of args
- * Return: Awlays 0
+ * Return: Awlays 0, unless error then 1
  */
 int main(int argc, char *argv[])
 {
@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
 	else
 	{
 		printf("error\n");
+		return (1);
 	}
 	return (0);
 }

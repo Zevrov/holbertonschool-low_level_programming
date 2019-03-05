@@ -5,12 +5,22 @@
 * create_array - creates an array
 * @size: the size of the array
 * @c: what's in the array
-* Returns: the array
+* Return: the array
 */
-char *create_array(unsigned int size, char c);
+char *create_array(unsigned int size, char c)
 {
+	unsigned int i;
+	char *str;
+	
+	i = 0;
 	if (size == 0)
 		return ('\0');
-	char *str = malloc(10 * sizeof(char));
+	str = malloc((size + 1) * sizeof(char));
+	while (i < size)
+	{
+		str[i] = c;
+		i++;
+	}
+	str[i] = '\0';
 	return (str);
 }

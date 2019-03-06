@@ -27,10 +27,11 @@ int **alloc_grid(int width, int height)
 		{
 			for (z = 0; z < height; z++)
 			{
-				free(griz[z]);
+				free(grid[z]);
 				z++;
 			}
 			return (NULL);
+		}
 	}
 	for (x = 0; x < height; x++)
 		for (y = 0; y < width; y++)

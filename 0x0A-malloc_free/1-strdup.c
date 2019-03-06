@@ -20,9 +20,9 @@ char *_strdup(char *str)
 		j++;
 	}
 	new[j] = '\0';
-	if (*new == '\0')
+	if (new == '\0')
 		return ('\0');
-	if (!*new)
+	if (!new)
 		return ('\0');
 	return (new);
 }

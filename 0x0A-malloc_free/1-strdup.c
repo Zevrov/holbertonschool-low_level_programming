@@ -16,8 +16,6 @@ char *_strdup(char *str)
 	while (str[i] != '\0')
 		i++;
 	new = malloc(i * sizeof(str));
-	if (new == NULL)
-		return ('\0');
 	while (j < i)
 	{
 		new[j] = str[j];

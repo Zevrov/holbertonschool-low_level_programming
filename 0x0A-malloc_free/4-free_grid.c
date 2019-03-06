@@ -1,6 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
-#include <sdlib.h>
+#include <stdlib.h>
 /**
  * free_grid - frees a grid
  * @grid: the grid

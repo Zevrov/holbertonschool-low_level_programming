@@ -1,18 +1,22 @@
 #include "dog.h"
+#include <stdio.h>
+#include <stdlib.h>
 /**
  * new_dog - the new dog
- * 
- *
- *
+ * @name: the name of the dog
+ * @age: the age of the dog
+ * @owner: the owner of the dog
+ * Return: the dog or NULL if failure
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	new_dog = malloc(sizeof(struct dog_t));
-	if (new_dog == NULL)
+	struct dog *pupper;
+	pupper = malloc(sizeof(struct dog));
+	if (!pupper)
 		return (NULL);
-	user->name = name;
-	user->age = age;
-	user->owner = owner;
-	return (new_dog);
+	pupper->name = name;
+	pupper->age = age;
+	pupper->owner = owner;
+	return (pupper);
 }
 

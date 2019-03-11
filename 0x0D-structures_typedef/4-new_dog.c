@@ -13,7 +13,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	struct dog *pupper;
 	char *namecpy = name;
 	char *ownercpy = owner;
-	
+
 	ownercpy = malloc(sizeof(char *));
 	if (!ownercpy)
 		free(ownercpy);

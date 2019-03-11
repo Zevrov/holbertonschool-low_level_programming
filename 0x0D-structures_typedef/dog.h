@@ -13,6 +13,10 @@ struct dog
 	float age;
 	char *owner;
 };
+/**
+ * struct dog_f - another dog
+ */
+typedef struct dog dog_f;
 int _putchar(char c);
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);

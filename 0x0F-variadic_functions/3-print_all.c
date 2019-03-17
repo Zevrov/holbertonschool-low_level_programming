@@ -57,13 +57,13 @@ void print_all(const char * const format, ...)
 	va_list args;
 	char *sep1 = "", *sep2 = ", ";
 	int count1 = 0, count2 = 0;
-	
+
 	va_start(args, format);
 	while (format !=  NULL && format[count1] != '\0')
 	{
 		count2 = 0;
 		while (types[count2].z != '\0')
-		{	
+		{
 			if (format[count1] == types[count2].z)
 			{
 				printf("%s", sep1);

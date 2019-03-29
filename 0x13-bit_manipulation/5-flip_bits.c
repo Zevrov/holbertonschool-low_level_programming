@@ -5,7 +5,7 @@
  * @m: the input of long int
  * Return: flip the numbers after comparing
  */
-unsigned int flip_bits(unsigned long int n, unsigned int index)
+unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
 	unsigned int count = 0;
 	unsigned long int Z;

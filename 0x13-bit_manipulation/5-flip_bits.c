@@ -1,21 +1,21 @@
 #include "holberton.h"
 /**
- * clear_bit - sets the value of a bit to 0 at an index
- * @n: the number
- * @index: the index of the bit to return
- * Return: the value of the bit or -1 on failure
+ * flip_bits - flip the bits
+ * @n: the input of long int
+ * @m: the input of long int
+ * Return: flip the numbers after comparing
  */
-int clear_bit(unsigned long int *n, unsigned int index)
+unsigned int flip_bits(unsigned long int n, unsigned int index)
 {
-	unsigned long int mask;
-	unsigned int maxb;
+	unsigned int count = 0;
+	unsigned long int Z;
 
-	maxb = sizeof(n) * 8;
-	if (index > maxb)
-		return (-1);
-	mask = 1;
-	mask <<= index;
-	mask = ~mask;
-	*n &= mask;
-	return (1);
+	Z = n ^ m;
+	while (Z > 0)
+	{
+		if (Z & 1)
+			count++;
+		Z = Z >> 1;
+	}
+	return (count);
 }

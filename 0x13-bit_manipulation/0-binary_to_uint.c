@@ -6,7 +6,7 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int uint = 0, 2pow = 1;
+	unsigned int uint = 0, pow2 = 1;
 	int count = 0;
 
 	if (!b)
@@ -18,9 +18,9 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (b[count] != '0' && b[count] != '1')
 			return (0);
-		uint += (b[count] - '0') * 2pow;
+		uint += (b[count] - '0') * pow2;
 		count--;
-		2pow *= 2;
+		pow2 *= 2;
 	}
 	return (uint);
 }

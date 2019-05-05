@@ -1,5 +1,5 @@
 #include "lists.h"
-/*
+/**
 * add_dnodeint - adds a new node to the beginning of the list
 * @head: pointer to pointer to head
 * @n: constant element

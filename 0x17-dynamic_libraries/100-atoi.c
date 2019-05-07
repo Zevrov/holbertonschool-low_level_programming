@@ -4,7 +4,7 @@
  * @s: the string
  * Return: n
  */
-int _atoi(char *s)
+int _atoi()
 {
 	/* int x; */
 	/* char arr[]; */

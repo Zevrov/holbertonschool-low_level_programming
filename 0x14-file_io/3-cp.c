@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
  * @to_file: the name of the file being written to
  * @from_file: the name of the file being read from
  */
-void rw_checker(int to, int from, char to_file, char from_file)
+void rw_checker(int to, int from, char *to_file, char *from_file)
 {
 	if (to == -1 || from == -1)
 	{

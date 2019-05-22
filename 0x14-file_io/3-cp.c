@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 		rcount = read(from_z, buffer, 1024);
 		if (rcount == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from %s\n", argv[1]);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
 		wcount = write(to_z, buffer, rcount);
@@ -65,7 +65,7 @@ void rw_checker(int to, int from, char *to_file, char *from_file)
 		}
 		if (from == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from %s\n", from_file);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from_file);
 			exit(98);
 		}
 	}

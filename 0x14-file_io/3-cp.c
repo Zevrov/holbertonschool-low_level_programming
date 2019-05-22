@@ -7,7 +7,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int to_z, from_z, rcount, wcount, close_error;
+	int to_z, from_z, rcount, wcount, close_to_error, close_from_error;
 	char buffer[1024];
 
 	if (argc != 3)
@@ -46,14 +46,14 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	}
-	close_error = close(to_z);
-	if (close_error == -1)
+	close_to_error = close(to_z);
+	if (close_to_error == -1)
 	{
 		dprintf(STDERR_FILENO, "ERROR: Can't close to fd %d\n", to_z);
 		exit(100);
 	}
-	close_error = close(from_z);
-	if (close_error == -1)
+	close_from_error = close(from_z);
+	if (close_from_error == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", from_z);
 		exit(100);

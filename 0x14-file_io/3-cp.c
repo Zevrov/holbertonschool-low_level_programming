@@ -16,16 +16,19 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	to_z = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 00664);
-	if (to_z == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
 	from_z = open(argv[1], O_RDONLY);
-	if (from_z == -1)
+	if (to_z == -1 || from_z == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
+		if (to_z == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
+		if (from_z == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			exit(98);
+		}
 	}
 	rcount = 1024;
 	while (rcount == 1024)

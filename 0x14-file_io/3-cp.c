@@ -60,12 +60,12 @@ void rw_checker(int to, int from, char *to_file, char *from_file)
 	{
 		if (to == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: can't write to %s\n", to_file);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to_file);
 			exit(99);
 		}
 		if (from == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: can't read from %s\n", from_file);
+			dprintf(STDERR_FILENO, "Error: Can't read from %s\n", from_file);
 			exit(98);
 		}
 	}

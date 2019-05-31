@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "hash_tables.h"
 /**
 * hash_djb2 - hash function djb2 algorithm
 *

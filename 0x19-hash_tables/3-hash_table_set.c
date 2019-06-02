@@ -8,8 +8,8 @@
 */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-    unsigned long int index;
+	unsigned long int index;
 
-    index = hash_djb2(key) % size;
-    return (index);
+	index = hash_djb2(key) % size;
+	return (index);
 }

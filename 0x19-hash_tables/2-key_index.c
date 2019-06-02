@@ -1,6 +1,6 @@
 #include "hash_tables.h"
 /**
-* hash_table_set - sets a hash table
+* key_index - sets a hash table
 * @key: the key
 * @size: the value for size
 * Return: where the key/value is stored in the array

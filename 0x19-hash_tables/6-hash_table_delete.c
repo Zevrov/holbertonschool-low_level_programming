@@ -9,18 +9,23 @@ void hash_table_delete(hash_table_t *ht)
 	hash_node_t *holder, *next;
 	unsigned long int index = 0;
 
-	holder = (*ht).array[index];
-	if (holder == NULL)
-	{
+	if (!ht)
 		return;
-	}
 	for (; (*ht).size > index; index++)
 	{
-		for (; holder != NULL; holder = next)
+		if ((*ht).array[index] != NULL)
 		{
-			next = (*holder).next;
-			free(holder);
+			holder = (*ht).array[index];
+			while (holder != NULL)
+			{
+				next = (*holder).next;
+				free((*holder).key);
+				free((*holder).value);
+				free(holder);
+				holder = next;
+			}
 		}
 	}
+	free((*ht).array);
 	free(ht);
 }

@@ -10,6 +10,9 @@ void bubble_sort(int *array, size_t size)
 {
 	unsigned int x = 0, y = 0, tmp = 0;
 
+	if (!array)
+		return;
+
 	for (x = 0; x < size - 1; x++)
 	{
 		for (y = 0; y < size - x - 1; y++)

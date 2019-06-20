@@ -25,5 +25,6 @@ void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
+void kwik_e_sort(int *array, size_t size, size_t first, size_t last);
 
 #endif /* sort.h */

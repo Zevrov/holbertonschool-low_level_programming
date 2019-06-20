@@ -14,29 +14,43 @@ void quick_sort(int *array, size_t size)
 }
 
 /**
- * kwik_e_sort - helper for quicksort to get my parameters
- * @array: the array being sorted
+ * kwik_e_sort - sorts using a partition algorithm
+ * @array: array to be sorted
  * @size: the size of the array
- * @first: the start of the array
- * @last: the last index of the array
+ * @first: the first index
+ * the last index
  */
-void kwik_e_sort(int *array, size_t size, size_t first, size_t last)
+void kwik_e_sort(int *array, size_t size, int first, int last)
 {
-	unsigned int x, y, pivot, temp;
+	int partition;
 
 	if (first < last)
 	{
-		pivot = first;
-		x = first;
-		y = last;
+		partition = lomuto(array, size, first, last);
+		kwik_e_sort(array, size, first, partition - 1);
+		kwik_e_sort(array, size, partition + 1, last);
+	}
+}
 
-		while (x < y)
+/**
+ *
+ *
+ *
+ */
+int lomuto(int *array, size_t size, int first, int last)
+{
+	int pivot, temp, x, y;
+
+	pivot = array[last];
+	y = first;
+	x = first - 1;
+
+	while (y < last)
+	{
+		if (array[y] <= pivot)
 		{
-			while (array[x] <= array[pivot] && x < last)
-				x++;
-			while (array[y] > array[pivot])
-				y--;
-			if (x < y)
+			x++;
+			if (x != y)
 			{
 				temp = array[x];
 				array[x] = array[y];
@@ -44,11 +58,14 @@ void kwik_e_sort(int *array, size_t size, size_t first, size_t last)
 				print_array(array, size);
 			}
 		}
-		temp = array[pivot];
-		array[pivot] = array[y];
-		array[y] = temp;
-		print_array(array, size);
-		kwik_e_sort(array, size, first, y - 1);
-		kwik_e_sort(array, size, y + 1, last);
+		y++;
 	}
+	if (pivot < array[x + 1])
+	{
+		temp = array[x + 1];
+		array[x + 1] = array[last];
+		array[last] = temp;
+		print_array(array, size);
+	}
+	return (x + 1);
 }

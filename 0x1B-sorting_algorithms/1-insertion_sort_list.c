@@ -2,42 +2,59 @@
 #include <stdio.h>
 
 /**
+ * swapi - swaps node to the last node
+ * @node: the node being swapped
+ */
+void swapi(listint_t *node)
+{
+	listint_t *x, *y, *next;
+
+	if (node->prev == NULL)
+		return;
+	x = (*node).prev;
+	y = (*x).prev;
+	next = (*node).next;
+	if (y != NULL)
+		(*y).next = node;
+	(*node).prev = y;
+	(*node).next = x;
+	(*x).prev = node;
+	(*x).next = next;
+	if (next != NULL)
+		(*next).prev = x;
+}
+
+/**
  * insertion_sort_list - sort doubly linked list via insertion sort
  * @list: double pointer to a doubly linked list
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *here, *temp, *temp_n;
-	int check = 0;
+	listint_t *temp, *current;
 
-	if ((*list)->next == NULL || !list || *list == NULL)
+	if (!list || !*list)
 		return;
-	here = (*list)->next;
-	while (here != NULL)
+	current = (*list)->next;
+	while (current != NULL)
 	{
-		temp = here;
-		while (temp->prev != NULL)
+		if ((*current).prev->n > (*current).n)
 		{
-			check = 0;
-			if (temp->n < temp->prev->n)
+			temp = (*current).next;
+			while ((*current).prev != NULL)
 			{
-				if (temp->prev->prev != NULL)
-					temp->prev->prev->next = temp;
-				temp->prev->next = temp->next;
-				temp_n = temp->prev->prev;
-				temp->prev->prev = temp;
-				if (temp->next != NULL)
-					temp->next->prev = temp->prev;
-				temp->next = temp->prev;
-				temp->prev = temp_n;
-				check = 1;
-				if (temp->prev == NULL)
-					*list = temp;
-				print_list(*list);
+				if ((*current).n < (*current).prev->n)
+				{
+					swapi(current);
+					while ((*list)->prev != NULL)
+						(*list) = (*list)->prev;
+					print_list(*list);
+				}
+				else
+					break;
 			}
-			if (check == 0)
-				temp = temp->prev;
+			current = temp;
 		}
-		here = here->next;
+		else
+			current = (*current).next;
 	}
 }

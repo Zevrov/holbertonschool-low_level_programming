@@ -29,5 +29,6 @@ void kwik_e_sort(int *array, size_t size, int first, int last);
 int lomuto(int *array, size_t size, int first, int last);
 void hoare_sort(int *array, size_t size, size_t first, size_t last);
 void quick_sort_hoare(int *array, size_t size);
+void swapi(listint_t *node);
 
 #endif /* sort.h */

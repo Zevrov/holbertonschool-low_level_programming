@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * quick_sort
+ * quick_sort_hoare - sorts using hoare's algorithm
  * @array: the array to be sorted
  * @size: the size of the array
  */

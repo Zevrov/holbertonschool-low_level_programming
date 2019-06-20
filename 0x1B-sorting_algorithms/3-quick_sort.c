@@ -8,7 +8,7 @@
  */
 void quick_sort(int *array, size_t size)
 {
-	if (!array)
+	if (!array || size < 2)
 		return;
 	kwik_e_sort(array, size, 0, size - 1);
 }

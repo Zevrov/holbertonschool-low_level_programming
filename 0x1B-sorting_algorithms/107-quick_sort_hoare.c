@@ -1,15 +1,10 @@
 #include <stdio.h>
 
 /**
- * do_quick_sort - recursive helper function for quick_sort
- * @array: array to sort a part of
- * quick_sort - sorts quickly
- * @array: the array
- * @size: total size of array
- * @start: index to start at
- * @stop: index to stop at
+ * quick_sort
+ * @array: the array to be sorted
+ * @size: the size of the array
  */
-void do_quick_sort(int *array, size_t size, size_t start, size_t stop)
 void quick_sort(int *array, size_t size)
 {
 	if (!array)
@@ -18,7 +13,7 @@ void quick_sort(int *array, size_t size)
 }
 
 /**
- * kwik_e_sort - helper for quicksort to get my parameters
+ * kwik_e_sort - helper for quicksort with hoare's partitions
  * @array: the array being sorted
  * @size: the size of the array
  * @first: the start of the array

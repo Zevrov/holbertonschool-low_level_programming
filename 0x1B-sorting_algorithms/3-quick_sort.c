@@ -18,7 +18,7 @@ void quick_sort(int *array, size_t size)
  * @array: array to be sorted
  * @size: the size of the array
  * @first: the first index
- * the last index
+ * @last: the last index
  */
 void kwik_e_sort(int *array, size_t size, int first, int last)
 {
@@ -33,9 +33,12 @@ void kwik_e_sort(int *array, size_t size, int first, int last)
 }
 
 /**
- *
- *
- *
+ * lomuto - lomuto partition algorithm
+ * @array: the array
+ * @size: the size of the array
+ * @first: the first index of the array
+ * @last: the last index of the array
+ * Return: the new value of the index
  */
 int lomuto(int *array, size_t size, int first, int last)
 {

@@ -5,14 +5,14 @@ OBJ = ${SRC:%.c=%.o}
 RM = rm
 
 all: $(OBJ)
-        $(CC) $(OBJ) -o $(NAME)
+		$(CC) $(OBJ) -o $(NAME)
 
 fclean: clean oclean
 
 clean:
-        ${RM} *~ ${NAME}
+		${RM} *~ ${NAME}
 
 oclean:
-        ${RM} ${OJ}
+		${RM} ${OJ}
 
 re: oclean all

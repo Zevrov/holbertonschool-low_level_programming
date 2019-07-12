@@ -1,2 +1,2 @@
 all: main.c m.h holberton.c
-gcc main.c holberton.c -o holberton
+		gcc main.c holberton.c -o holberton

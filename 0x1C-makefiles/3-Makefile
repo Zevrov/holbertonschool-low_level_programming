@@ -7,14 +7,12 @@ NAME = holberton
 all: ${OBJ}
 		${CC} ${OBJ} -o ${NAME}
 
-$(OBJ): m.h
+fclean: clean oclean
 
 oclean:
 		${RM} ${OJ}
 
 clean:
 		${RM} *~ ${NAME}
-
-fclean: clean oclean
 
 re: oclean all

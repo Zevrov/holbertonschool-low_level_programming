@@ -2,17 +2,18 @@
 
 /**
 * binary_tree_depth - find depth of given node
-* @tree: node to measure
-* Return: depth of node, 0 on failure
+* @tree: le node
+* Return: depth of node, 0 on fail
 */
 
 size_t binary_tree_depth(const binary_tree_t *tree)
 {
-	int depth = 0;
+	binary_tree_t *old;
+	size_t count = 0;
 
-	if (tree->parent == NULL || tree == NULL)
+	if (tree == NULL)
 		return (0);
-
-	depth = binary_tree_depth(tree->parent);
-	return (depth + 1);
+	for (old = tree->parent; old != NULL; old = old->parent)
+		count++;
+	return (count);
 }

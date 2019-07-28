@@ -13,7 +13,9 @@ size_t binary_tree_depth(const binary_tree_t *tree)
 
 	if (tree == NULL)
 		return (0);
+
 	for (old = tree->parent; old != NULL; old = old->parent)
 		count++;
+
 	return (count);
 }

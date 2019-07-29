@@ -35,10 +35,10 @@ avl_t *rebalance_avl(avl_t *tree, int gem)
 		tree = binary_tree_rotate_right(tree->parent);
 	}
 
-	else if (balance < -1 && gem == 0x33)
+	else if (balance < -1 && gem == 33)
 		tree = binary_tree_rotate_left(tree->parent);
 
-	else if (balance < -1 && gem == 0x13)
+	else if (balance < -1 && gem == 13)
 	{
 		tree = binary_tree_rotate_right(tree);
 		tree = binary_tree_rotate_left(tree->parent);

@@ -57,6 +57,6 @@ int checker(const binary_tree_t *tree, size_t index, size_t size)
 	if (index >= size)
 		return (0);
 
-	return (checker(tree->right, index * 2 + 1, size) &&
-			checker(tree->left, index * 2 + 2, size));
+	return (checker(tree->left, index * 2 + 1, size) &&
+			checker(tree->right, index * 2 + 2, size));
 }

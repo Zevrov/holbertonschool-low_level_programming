@@ -64,44 +64,49 @@ size_t binary_tree_height(const binary_tree_t *tree)
 * Return: 1 if tree is there and is a Bst, else 0
 */
 
-int binary_tree_is_bst(binary_tree_t const *tree)
+int binary_tree_is_bst(const binary_tree_t *tree)
 {
-	char orientation = 'z';
+	int groot = 0;
 
-	if (tree == NULL)
+	groot = tree_null(tree);
+	if (groot == 1)
 		return (0);
 
-	if (tree->parent != NULL)
-	{
-		if (tree == tree->parent->left)
-			orientation = 'L';
-		else
-			orientation = 'R';
-	}
+	return (bst_helper(tree, INT_MIN, INT_MAX));
+}
 
-	if (tree->left != NULL)
-	{
-		if (binary_tree_is_bst(tree->left) == 0)
-			return (0);
-		if (tree->left->n >= tree->n)
-			return (0);
-		if (orientation == 'L' && tree->parent->n <= tree->left->n)
-			return (0);
-		if (orientation == 'R' && tree->parent->n >= tree->left->n)
-			return (0);
-	}
+/**
+* bst_helper - helps btib function
+* @tree: the tree
+* @lowest: int lowest
+* @highest: int highest
+* Return: 1 if true 0 if false
+*/
 
-	if (tree->right != NULL)
-	{
-		if (binary_tree_is_bst(tree->right) == 0)
-			return (0);
-		if (tree->right->n <= tree->n)
-			return (0);
-		if (orientation == 'L' && tree->parent->n <= tree->right->n)
-			return (0);
-		if (orientation == 'R' && tree->parent->n >= tree->right->n)
-			return (0);
-	}
+int bst_helper(const binary_tree_t *tree, int lowest, int highest)
+{
+	int groot = 0;
 
-	return (1);
+	groot = tree_null(tree);
+	if (groot == 1)
+		return (1);
+
+	if (tree->n >= highest || tree->n <= lowest)
+		return (0);
+
+	return ((bst_helper(tree->left, lowest, tree->n)) &&
+			(bst_helper(tree->right, tree->n, highest)));
+}
+
+/**
+* tree_null - tells if a tree is null
+* @tree: the tree
+* Return: 1 or 0
+*/
+
+int tree_null(const binary_tree_t *tree)
+{
+	if (tree == NULL)
+		return (1);
+	return (0);
 }

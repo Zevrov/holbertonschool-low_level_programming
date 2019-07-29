@@ -61,5 +61,6 @@ bst_t *array_to_bst(int *array, size_t size);
 bst_t *bst_search(bst_t const *tree, int value);
 bst_t *bst_remove(bst_t *root, int value);
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
+binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 
 #endif /* binary_trees_h */

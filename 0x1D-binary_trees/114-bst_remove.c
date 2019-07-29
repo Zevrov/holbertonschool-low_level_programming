@@ -24,7 +24,7 @@ bst_t *bst_remove(bst_t *root, int value)
 			plpl->parent->right = plpl->left;
 			plpl->left = leaf->left;
 		}
-		plpl->parent = leaf->parent, plpl->right = leaf->right;
+		plpl->right = leaf->right, plpl->parent = leaf->parent;
 	}
 	else if (leaf->right != NULL)
 	{
@@ -35,16 +35,16 @@ bst_t *bst_remove(bst_t *root, int value)
 			plpl->parent->left = plpl->right;
 			plpl->right = leaf->right;
 		}
-		plpl->parent = leaf->parent, plpl->left = leaf->left;
+		plpl->left = leaf->left, plpl->parent = leaf->parent;
 	}
 	if (leaf->parent != NULL && leaf->parent->right == leaf)
 		leaf->parent->right = plpl;
 	if (leaf->parent != NULL && leaf->parent->left == leaf)
 		leaf->parent->left = plpl;
 	free(leaf);
-	if (plpl != NULL && plpl->right != NULL)
+	if (plpl->right != NULL && plpl != NULL)
 		plpl->right->parent = plpl;
-	if (plpl != NULL && plpl->left != NULL)
+	if (plpl->left != NULL && plpl != NULL)
 		plpl->left->parent = plpl;
 	if (plpl->parent == NULL)
 		return (plpl);

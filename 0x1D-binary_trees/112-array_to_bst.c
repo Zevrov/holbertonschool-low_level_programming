@@ -1,10 +1,10 @@
 #include "binary_trees.h"
 
 /**
-* array_to_bst - fill a new binary search tree with values from an array
-* @array: pointer to array with data to fill
-* @size: number of items to store in tree
-* Return: root node of tree
+* array_to_bst - fill a new bst with values from an array
+* @array: pointer to array
+* @size: array size
+* Return: root of tree
 */
 
 bst_t *array_to_bst(int *array, size_t size)

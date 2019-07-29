@@ -1,5 +1,4 @@
 #include "binary_trees.h"
-#define NULL ((void *)0)
 
 /**
 * binary_tree_uncle - find sibling of node parent

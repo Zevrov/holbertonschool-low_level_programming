@@ -2,7 +2,7 @@
 
 /**
 * binary_tree_uncle - find sibling of node parent
-* @node: the node siblings are being found for
+* @node: the node
 * Return: the uncle node, NULL on failures
 */
 

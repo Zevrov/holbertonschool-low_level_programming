@@ -73,5 +73,6 @@ int tree_null(const binary_tree_t *tree);
 void make(const binary_tree_t *tree, void (*func)(int), size_t deep);
 int checker(const binary_tree_t *tree, size_t index, size_t size);
 avl_t *array_to_avl(int *array, size_t size);
+heap_t *array_to_heap(int *array, size_t size);
 
 #endif /* binary_trees_h */

@@ -63,5 +63,7 @@ bst_t *bst_remove(bst_t *root, int value);
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 int binary_tree_is_avl(binary_tree_t const *tree);
+avl_t *avl_insert(avl_t **tree, int value);
+avl_t *rebalance_avl(avl_t *tree, int side);
 
 #endif /* binary_trees_h */

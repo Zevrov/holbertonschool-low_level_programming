@@ -14,31 +14,31 @@ avl_t *rebalance_avl(avl_t *tree, int gem)
 		return (tree);
 
 	if (tree->parent->left == tree && gem == 'x')
-		gem = 2;
+		gem = 0x11;
 
 	else if (tree->parent->left == tree && gem == 'y')
-		gem = 4;
+		gem = 0x112;
 
 	else if (tree->parent->right == tree && gem == 'y')
-		gem = 33;
+		gem = 0x1212;
 
 	else
-		gem = 13;
+		gem = 0x121;
 
 	balance = binary_tree_balance(tree->parent);
-	if (balance > 1 && gem == 2)
+	if (balance > 1 && gem == 0x11)
 		tree = binary_tree_rotate_right(tree->parent);
 
-	else if (balance > 1 && gem == 4)
+	else if (balance > 1 && gem == 0x112)
 	{
 		tree = binary_tree_rotate_left(tree);
 		tree = binary_tree_rotate_right(tree->parent);
 	}
 
-	else if (balance < -1 && gem == 33)
+	else if (balance < -1 && gem == 0x1212)
 		tree = binary_tree_rotate_left(tree->parent);
 
-	else if (balance < -1 && gem == 13)
+	else if (balance < -1 && gem == 0x121)
 	{
 		tree = binary_tree_rotate_right(tree);
 		tree = binary_tree_rotate_left(tree->parent);

@@ -9,42 +9,38 @@
 
 int binary_tree_is_bst(binary_tree_t const *tree)
 {
-	char orientation = 'z';
+	char side = 'x';
 
 	if (tree == NULL)
 		return (0);
-
 	if (tree->parent != NULL)
 	{
-		if (tree == tree->parent->left)
-			orientation = 'L';
+		if (tree->parent->left == tree)
+			side = 'l';
 		else
-			orientation = 'R';
+			side = 'r';
 	}
-
 	if (tree->left != NULL)
 	{
-		if (binary_tree_is_bst(tree->left) == 0)
-			return (0);
 		if (tree->left->n >= tree->n)
 			return (0);
-		if (orientation == 'L' && tree->parent->n <= tree->left->n)
+		if (side == 'l' && tree->left->n >= tree->parent->n)
 			return (0);
-		if (orientation == 'R' && tree->parent->n >= tree->left->n)
+		if (side == 'r' && tree->left->n <= tree->parent->n)
+			return (0);
+		if (binary_tree_is_bst(tree->left) == 0)
 			return (0);
 	}
-
 	if (tree->right != NULL)
 	{
-		if (binary_tree_is_bst(tree->right) == 0)
-			return (0);
 		if (tree->right->n <= tree->n)
 			return (0);
-		if (orientation == 'L' && tree->parent->n <= tree->right->n)
+		if (side == 'l' && tree->right->n >= tree->parent->n)
 			return (0);
-		if (orientation == 'R' && tree->parent->n >= tree->right->n)
+		if (side == 'r' && tree->right->n <= tree->parent->n)
+			return (0);
+		if (binary_tree_is_bst(tree->right) == 0)
 			return (0);
 	}
-
 	return (1);
 }

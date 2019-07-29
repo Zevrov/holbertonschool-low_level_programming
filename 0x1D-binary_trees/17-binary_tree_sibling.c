@@ -1,4 +1,5 @@
 #include "binary_trees.h"
+#define NULL ((void *)0)
 
 /**
 * binary_tree_sibling - deduces the sibling of a node

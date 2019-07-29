@@ -56,5 +56,6 @@ void levelorder(binary_tree_t const *tree,
 						size_t depth);
 int binary_tree_is_complete(binary_tree_t const *tree);
 int binary_tree_is_bst(binary_tree_t const *tree);
+bst_t *bst_insert(bst_t **tree, int value);
 
 #endif /* binary_trees_h */

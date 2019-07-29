@@ -1,7 +1,7 @@
 #include "binary_trees.h"
 
 /**
-* binary_tree_rotate_left - sliiide to the right
+* binary_tree_rotate_right - sliiide to the right
 * @tree: the tree
 * Return: new tree
 */

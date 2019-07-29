@@ -1,74 +1,62 @@
 #include "binary_trees.h"
 
 /**
-* size_comparer - returns the larger thing
-* @a: thing 1
-* @b: thing 2
-* Return: the larger thing
-*/
-
-int size_comparer(int a, int b)
-{
-	return (a >= b ? a : b);
-}
-
-/**
-* binary_tree_height - find height of the tree
+* binary_tree_is_complete - checks if a btree is complete
 * @tree: the tree
-* Return: tree height
+* Return: 1 complete 0 else
 */
 
-size_t binary_tree_height(const binary_tree_t *tree)
+int binary_tree_is_complete(const binary_tree_t *tree)
 {
+	size_t size, idx;
+	int vrai;
+
 	if (tree == NULL)
 		return (0);
 
-	return (size_comparer(binary_tree_height(tree->right),
-			binary_tree_height(tree->left)) + 1);
+	idx = 0;
+	size = binary_tree_size(tree);
+	vrai = checker(tree, idx, size);
+
+	return (vrai);
 }
 
 /**
-* binary_tree_balance - balance of tree
+* binary_tree_size - counts the nodes in a Btree
 * @tree: the tree
-* Return: balance
+* Return: number of nodes in the tree
 */
 
-int binary_tree_balance(const binary_tree_t *tree)
+size_t binary_tree_size(binary_tree_t const *tree)
 {
 	if (tree == NULL)
-		return (0);
-
-	return (binary_tree_height(tree->left) -
-			binary_tree_height(tree->right));
-}
-
-/**
-* binary_tree_is_complete - checks if the btree is complete
-* @tree: the tree
-* Return: 0 if not all subs are weighted to the left, 1 if they are
-*/
-
-int binary_tree_is_complete(binary_tree_t const *tree)
-{
-	if (tree == NULL)
-		return (0);
-
-	if (binary_tree_balance(tree) < 0 && tree->parent == NULL)
-		return (0);
-
-	if (tree->right != NULL)
 	{
-		if (binary_tree_balance(tree->right) != 0
-			|| binary_tree_is_complete(tree->right) == 0)
-			return (0);
+		return (0);
 	}
 
-	if (tree->left != NULL)
+	else
 	{
-		if (binary_tree_balance(tree->left) < 0
-			|| binary_tree_is_complete(tree->left) == 0)
-			return (0);
+		return (binary_tree_size(tree->right) +
+				binary_tree_size(tree->left) + 1);
 	}
+}
 
-	return (1);
+/**
+* checker - check if the btree complete
+* @tree: the tree
+* @index: where the node is
+* @size: size of the tree
+* Return: 1 complete 0 else
+*/
+
+int checker(const binary_tree_t *tree, size_t index, size_t size)
+{
+	if (tree == NULL)
+		return (1);
+
+	if (index >= size)
+		return (0);
+
+	return (checker(tree->right, index * 2 + 1, size) &&
+			checker(tree->left, index * 2 + 2, size));
 }

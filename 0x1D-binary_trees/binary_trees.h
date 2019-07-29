@@ -3,6 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
+#include <string.h>
+#include <unistd.h>
+#include <limits.h>
 
 /**
  * struct binary_tree_s - Binary tree node
@@ -65,5 +68,7 @@ binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 int binary_tree_is_avl(binary_tree_t const *tree);
 avl_t *avl_insert(avl_t **tree, int value);
 avl_t *rebalance_avl(avl_t *tree, int side);
+int bst_helper(const binary_tree_t *tree, int lowest, int highest);
+int tree_null(const binary_tree_t *tree);
 
 #endif /* binary_trees_h */

@@ -4,17 +4,12 @@
 * size_comparer - returns the larger thing
 * @a: thing 1
 * @b: thing 2
-* Return: the larger thing, 0 if they are the same
+* Return: the larger thing
 */
 
 int size_comparer(int a, int b)
 {
-	if (a > b)
-		return (a);
-	if (b > a)
-		return (b);
-	else
-		return (0);
+	return (a >= b ? a : b);
 }
 
 /**

@@ -85,10 +85,10 @@ avl_t *avl_insert(avl_t **tree, int value)
 		return (NULL);
 	leaf->n = value, leaf->parent = paternal;
 	leaf->right = NULL, leaf->left = NULL;
-	if (gem == 'x')
-		paternal->left = leaf;
-	else
+	if (gem == 'y')
 		paternal->right = leaf;
+	else
+		paternal->left = leaf;
 	if (paternal->parent == *tree)
 		*tree = rebalance_avl(paternal, gem);
 	else

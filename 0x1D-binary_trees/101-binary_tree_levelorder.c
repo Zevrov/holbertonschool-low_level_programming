@@ -1,29 +1,6 @@
 #include "binary_trees.h"
 
 /**
-* levelorder - recursive function for binary_tree_levelorder
-* @tree: tree
-* @func: function to call on each node
-* @depth: level of nodes
-*/
-
-void levelorder(binary_tree_t const *tree,
-						void (*func)(int),
-						size_t depth)
-{
-	if (depth == 0)
-	{
-		func(tree->n);
-		return;
-	}
-
-	if (tree->left != NULL)
-		levelorder(tree->left, func, depth - 1);
-	if (tree->right != NULL)
-		levelorder(tree->right, func, depth - 1);
-}
-
-/**
 * binary_tree_levelorder - use level order on tree
 * @tree: tree
 * @func: function to call on each node in the tree
@@ -33,17 +10,38 @@ void binary_tree_levelorder(binary_tree_t const *tree, void (*func)(int))
 {
 	size_t tallness, index;
 
-	if (tree == NULL)
+	if (func == NULL || tree == NULL)
 		return;
 
-	tallness = binary_tree_height(tree);
+	tallness = binary_tree_height(tree) + 1;
 
-	for (index = 0; index < tallness; index++)
+	for (index = 1; index <= tallness; index++)
 	{
-		levelorder(tree, func, index);
+		make(tree, func, index);
 	}
 }
 
+/**
+* make - prints what's up
+* @tree: the tree
+* @func: the function
+* @deep: the depth of the tree
+*/
+
+void make(const binary_tree_t *tree, void (*func)(int), size_t deep)
+{
+	if (tree == NULL)
+		return;
+
+	if (deep == 1)
+		func(tree->n);
+
+	else if (deep > 1)
+	{
+		make(tree->left, func, deep - 1);
+		make(tree->right, func, deep - 1);
+	}
+}
 /**
 * binary_tree_height - measure height of BTree
 * @tree: root of tree
@@ -59,8 +57,8 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	if (tree->left == NULL && tree->right == NULL)
 		return (0);
 
-	r = binary_tree_height(tree->right);
 	l = binary_tree_height(tree->left);
+	r = binary_tree_height(tree->right);
 
 	if (r > l)
 		return (r + 1);

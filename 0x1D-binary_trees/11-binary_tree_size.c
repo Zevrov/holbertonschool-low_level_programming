@@ -9,9 +9,13 @@
 size_t binary_tree_size(binary_tree_t const *tree)
 {
 	if (tree == NULL)
+	{
 		return (0);
+	}
 
 	else
+	{
 		return (binary_tree_size(tree->right) +
 				binary_tree_size(tree->left) + 1);
+	}
 }

@@ -10,7 +10,7 @@ int binary_search(int *array, size_t size, int value)
 {
 	int low = 0, middle, high, index;
 
-	if (array[0] > value || array == NULL)
+	if (size == 0 || array == NULL)
 		return (-1);
 	high = size - 1;
 	while (low <= high)

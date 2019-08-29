@@ -8,28 +8,40 @@
  */
 int binary_search(int *array, size_t size, int value)
 {
-	size_t i, validate, end = size - 1, beg = 0;
+	int low = 0, high = size - 1, middle, index;
 
-	if (array == NULL || array[0] > value)
+	if (array[0] > value || array == NULL)
 		return (-1);
-	validate = end / 2;
-	while (1)
+
+	while (low < high)
 	{
-		if (end < beg)
-			return (-1);
 		printf("Searching in array: ");
-		for (i = beg; i <= end; i++)
-			printf(i < end ? "%d, " : "%d\n", array[i]);
-		if (array[validate] == value)
-			return ((int) validate);
-		if (array[validate] < value)
+		for (index = low; index <= high; index++)
 		{
-			beg = validate + 1;
+			if (index < high)
+			{
+				printf("%i, ", array[index]);
+			}
+			if (index == high)
+			{
+				printf("%i\n", array[index]);
+			}
 		}
-		else if (array[validate] > value)
+
+		middle = (high + low) / 2;
+
+		if (array[middle] < value)
 		{
-			beg = validate - 1;
+			low = middle + 1;
 		}
-		validate = (end - beg) / 2 + beg;
+		else if (array[middle] > value)
+		{
+			high = middle - 1;
+		}
+		else
+		{
+			return (middle);
+		}
 	}
+	return (-1);
 }
